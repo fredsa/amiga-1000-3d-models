@@ -4,11 +4,12 @@ delta=0.001;
 in2mm = 25.4;
 
 outer=63/64*in2mm;
-peg_r=3/16*in2mm/2;
+interholeextra=.1;
+peg_r=3/16*in2mm/2+.2;
 padding=1/4*in2mm;
-height=3/16*in2mm/2;
-
+height=3/16*in2mm/2-.2;
 outside=outer+2*padding;
+leftrightextra=.2;
 
 module plate() {
   cube([outside,outside,height]);
@@ -22,9 +23,9 @@ module peg() {
 module three_pegs() {
     translate([0, peg_r+padding,0])
         peg();
-    translate([0, outer/2+padding,0])
+    translate([0, outer/2+padding+interholeextra,0])
         peg();
-    translate([0, outer+padding-peg_r,0])
+    translate([0, outer+padding-peg_r+2*interholeextra,0])
         peg();
 }
 
@@ -32,7 +33,7 @@ module pegs() {
     translate([peg_r+padding, 0])
         three_pegs();
 
-    translate([outer+padding-peg_r, 0, 0])
+    translate([outer+padding-peg_r+2*interholeextra+leftrightextra, 0, 0])
         three_pegs();
 }
 
