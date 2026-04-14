@@ -6,3 +6,5 @@ by [`alow2004`](https://www.thingiverse.com/alow2004/designs),
 licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
 
 Render `*.scad` file(s) using [OpenSCAD](https://openscad.org/).
+
+![joiner plate](backplate-joiner.png)
